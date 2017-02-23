@@ -1,0 +1,63 @@
+{
+  "fieldsets" : [
+    "Kjernedata",
+    "Personer",
+    "Endringer"
+  ],
+  "fields": {
+     "title": {
+      "title": "kurstittel"
+    },
+     "start_date": {
+      "title": "kurs start dato"
+    },
+     "end_date": {
+      "title": "kurs slutt dato"
+    },
+    "comment": {
+       "title": "kurs kommentar"
+    },
+    "people": {
+      "title": "personer",
+      "description":"Kursdeltakere",
+      "items": {
+        "fields": {
+          "first_name": {
+                "title": "fornavn (påkrevd)"
+             },
+             "last_name": {
+                "title": "etternavn (påkrevd)"
+             },
+             "organisation":{
+                "title": "organisasjon (påkrevd)"
+             },
+              "phone":{
+                "title": "telefon"
+             },
+              "email":{
+                "title": "epost"
+             },
+          "roles": {
+            "title": "roller (påkrevd)",
+            "values": [
+              "deltaker",
+              "instruktør"
+            ]
+          }
+              }
+      }
+},
+    "created": {
+      "title": "opprettet"
+    },
+    "created_by": {
+      "title": "opprettet av"
+    },
+    "updated": {
+      "title": "oppdatert"
+    },
+    "updated_by": {
+      "title": "oppdatert av"
+    }
+  }
+}

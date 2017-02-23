@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<npdc:edit-button class="np-primary-control"></npdc:edit-button>
+<npdc:loader ng-if="!document"></npdc:loader>
+<leaflet ng-if="document && mapOptions.coverage" options="mapOptions" class="coverage-map"></leaflet>
+<div class="np-padding">
+  <div ng-if="document" class="np-doc">
+
+    <h3>{{ 'NPI courses' | t }}</h3>
+
+ <h1><span class="md-display-2">{{ document.title }} </span></h1>
+
+<section ng-if="document.start_date" || "document.end_date">
+ <h3>{{'Dates' | t }}</h3>
+  <md-divider></md-divider>
+  <p><md-icon>label_outline</md-icon>&nbsp;
+  <span ng-if="document.start_date">{{(document.start_date).substr(0,10)}}</span>
+  <span ng-if="document.end_date">- {{(document.end_date).substr(0,10)}}</span>
+</section>
+<br />
+
+    <section ng-if="document.comment">
+    <h3>{{ 'Comment' | t }}</h3>
+        <md-divider></md-divider>
+    <p marked="document.comment"></p>
+   </section>
+   <br />
+
+
+ <npdc:persons></npdc:persons>
+
+
+<npdc:metadata metadata="metadata" document="document"></npdc:metadata>
+
+
+<!-- created updated -->
+      <section>
+        <npdc:document-meta></npdc:document-meta>
+      </section>
+
+    </div>
+</div>
+

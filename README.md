@@ -1,2 +1,2 @@
-# npdc-course
-NPI internal courses using the npdc-coursetype
+# npdc-courstype
+NPI internal courses uses npdc-coursetype

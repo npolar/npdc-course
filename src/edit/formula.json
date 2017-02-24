@@ -24,35 +24,7 @@
       "title": "People",
       "fields": [{
         "id": "people",
-        "items": {
-          "fields": [
-             "!id",
-             {
-          "id": "first_name",
-          "title": "first name (required)"
-        },
-        {
-          "id": "last_name",
-          "title": "last name (required)"
-        },
-         {
-          "id": "email",
-          "title": "email"
-        },
-         {
-          "id": "organisation",
-          "title": "organisation (required)"
-        },
-         {
-          "id": "phone",
-          "title": "phone"
-        },
-         {
-          "id": "roles",
-          "title": "roles (required)"
-        }
-      ]
-        }
+        "fields": ["!id"]
       }]
 },
   {

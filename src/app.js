@@ -38,5 +38,6 @@ npdcCourseApp.config(($httpProvider, npolarApiConfig) => {
 
 npdcCourseApp.run(($http, npdcAppConfig, NpolarTranslate, NpolarLang) => {
   NpolarTranslate.loadBundles('npdc-course');
+  npdcAppConfig.help = { uri: 'https://github.com/npolar/npdc-course/wiki' };
   npdcAppConfig.toolbarTitle = 'NPI courses';
 });

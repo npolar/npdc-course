@@ -11,6 +11,8 @@ var CourseShowController = function($controller, $routeParams,
   $scope.resource = Course;
 
 
+
+
   let show = function() {
 
     $scope.show().$promise.then((Course) => {

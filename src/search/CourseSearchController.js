@@ -7,6 +7,10 @@ var CourseSearchController = function ($scope, $location, $controller, $filter, 
   $controller('NpolarBaseController', { $scope: $scope });
   $scope.resource = Course;
 
+ //var path = window.location.host;
+ var href = window.location.href;
+ var href2 = href.split("course/");
+ $scope.path = href2[0] + 'coursetype';
 
 
  npdcAppConfig.search.local.results.detail = (entry) => {

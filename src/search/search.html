@@ -1,3 +1,8 @@
 <!DOCTYPE html>
+<span class="npdc-crumbs-container">
+    <span ng-if="!$last">
+      <a ng-href="{{ path }}" title="{{ 'coursetype' | t}}"> {{ 'coursetype' | t }} </a>
+    </span>
+</span>
 <npdc:search-input feed="feed"></npdc:search-input>
 <npdc:search feed="feed"></npdc:search>

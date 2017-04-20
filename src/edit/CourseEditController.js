@@ -5,18 +5,20 @@ var CourseEditController = function($scope, $controller, $routeParams, Course, f
   NpolarApiSecurity, npolarCountryService, NpolarMessage) {
   'ngInject';
 
+
   // EditController -> NpolarEditController
   $controller('NpolarEditController', {
     $scope: $scope
   });
 
-  // StationBooking -> npolarApiResource -> ngResource
+  // Course -> npolarApiResource -> ngResource
   $scope.resource = Course;
+
 
   let templates = [{
         match: "people_item",
         template: '<npdc:formula-person></npdc:formula-person>'
-}];
+  }];
 
   let i18n = [{
       map: require('./en.json'),
@@ -36,13 +38,25 @@ var CourseEditController = function($scope, $controller, $routeParams, Course, f
    });
 
 
+  formulaAutoCompleteService.autocomplete({
+    match: "coursetype_id",
+    querySource: npolarApiConfig.base + '/coursetype',
+    label: 'title',
+    value: 'id'
+}, $scope.formula);
+
+let autocompleteFacets = ['title'];
+  formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, Course, $scope.formula);
+
+
+
 //Set chronopic view format (this does not change the internal value, i.e. ISO string date)
  chronopicService.defineOptions({ match(field) {
     return field.path.match(/_date$/);
  }, format: '{date}'});
 
+  $scope.edit();
 
-   $scope.edit();
 };
 
 module.exports = CourseEditController;

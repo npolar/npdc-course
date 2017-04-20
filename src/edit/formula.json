@@ -8,6 +8,10 @@
          "title": "coursetype title"
       },
       {
+        "id": "coursetype_id",
+         "title": "coursetype id"
+      },
+      {
         "id": "start_date",
          "title": "course start date"
       },

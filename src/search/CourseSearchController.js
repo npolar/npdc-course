@@ -14,12 +14,11 @@ var CourseSearchController = function ($scope, $location, $controller, $filter, 
 
 
  npdcAppConfig.search.local.results.detail = (entry) => {
-     let updatedText = NpolarTranslate.translate('updated');
-     let comment = (entry.comment) == (null || undefined)? "" : (entry.comment) + ", ";
+     let updatedText = NpolarTranslate.translate('Start');
+     let comment = (entry.comment) === (null || undefined)? "" : (entry.comment) + ", ";
      let r =   comment + updatedText +":";
-     return r+` ${(entry.updated.split('T')[0])}`;
+     return r+` ${(entry.start_date.split('T')[0])}`;
  };
-
 
   npdcAppConfig.cardTitle = "NPI Course";
   npdcAppConfig.search.local.results.subtitle = "type";
@@ -29,8 +28,8 @@ var CourseSearchController = function ($scope, $location, $controller, $filter, 
     let defaults = {
       limit: "50",
       sort: "-updated",
-      fields: 'title,id,collection,updated,comment',
-      facets: 'comment'};
+      fields: 'title,id,collection,start_date,updated,comment',
+      facets: 'title,people.last_name'};
 
     let invariants = $scope.security.isAuthenticated() ? {} : {} ;
     return Object.assign({}, defaults, invariants);
